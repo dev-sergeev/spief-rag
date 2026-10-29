@@ -1,0 +1,15 @@
+# Секреты
+.env
+.env.*
+!.env.example
+
+# Локальное окружение и кэши
+.venv/
+.local/
+.cache/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Файлы ОС
+.DS_Store

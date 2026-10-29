@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "status": "running",
+  "started_at_utc": "2026-10-29T14:06:52.049138+00:00",
+  "baseline": {
+    "path": "results/baseline_20261029T140450851834Z.json",
+    "sha256": "88b2d0eb2553f161957eb96a8534886e4f7437bb45d290c9464642b57b902e37"
+  },
+  "baseline_quality": {
+    "path": "results/quality_20261029T140539551353Z.json",
+    "sha256": "33aa4e582bdd032784c3ff5bf397dc6448de5cc1b33620ac1afc2b976b67b945"
+  },
+  "experiments": [
+    {
+      "name": "deduplicated",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "deduplicated",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/deduplicated_20261029T140652260644Z.json",
+        "sha256": "ea3fdbe9bc564ba49c06c772809830b27e0923c1b7abb5edeaa9928725e00ff1"
+      },
+      "quality": {
+        "path": "results/quality_20261029T140734718645Z.json",
+        "sha256": "5fe21b93f5f6057197239e9999c5d42d754002f86bd95783ae5904e1ff380407"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 32087,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3625,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 35712,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 35712
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "focused",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "focused",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/focused_20261029T140824662181Z.json",
+        "sha256": "ef3962ea0c589e3a6c3f7d44d86bc2a566d1d98872b2ed1532d986a436981805"
+      },
+      "quality": {
+        "path": "results/quality_20261029T140859209156Z.json",
+        "sha256": "0f38d47621b6e5ee928a325a08cd81763329df2b79cb0681d86d0b2b6287a65a"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 29416,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3486,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 32902,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 32902
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "focused_evidence",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "focused",
+        "prompt_mode": "evidence"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/focused_evidence_20261029T141002310170Z.json",
+        "sha256": "b15efae7abb53dbe7b5101ee81037eaa57ea1e08daed8ec7ed85f9c8f0074622"
+      },
+      "quality": {
+        "path": "results/quality_20261029T141039954440Z.json",
+        "sha256": "bbd99cf7d5daacf14995be0913b1f33714dfeda088c3e34e810ead6f9901a791"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 28478,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3542,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 32020,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 32020
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "top_k_3",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 3,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/top_k_3_20261029T141133907861Z.json",
+        "sha256": "a03f37799b9601c58b9624ec103adab72c277906e64aa7964e8c5814728288c0"
+      },
+      "quality": {
+        "path": "results/quality_20261029T141209953901Z.json",
+        "sha256": "f1eaf57e9bde6ccb35d347745f4d77c37d671c3611f3fb943a06aef05077fe63"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31882,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3283,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 35165,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 35165
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "compact",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "compact",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/compact_20261029T141312508126Z.json",
+        "sha256": "ec05845788433ec658810c00519d23cd39f7c838e9b3f2ecb4c1156a8ea01d1a"
+      },
+      "quality": {
+        "path": "results/quality_20261029T141351509449Z.json",
+        "sha256": "edd40174ab33758a2c0ec218fe05a1c0367cbd4b01118509d765ad35a671c71e"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31315,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3515,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 34830,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 34830
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "self_consistency",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "self_consistency"
+      },
+      "family": "reasoning",
+      "description": "Три независимых решения и голосование по эквивалентным ответам.",
+      "status": "complete",
+      "generation": {
+        "path": "results/self_consistency_20261029T141443148929Z.json",
+        "sha256": "0c18d89adc6f84912b4bc2722b16672ae58ebb01a48c6207a6b75bdff0486cfe"
+      },
+      "quality": {
+        "path": "results/quality_20261029T141741840113Z.json",
+        "sha256": "94f303b54c53ea6bca02b359a33884d8966ba84c3338445ded5985012f1c195f"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31453,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3606,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 35059,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 35059
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "tree_of_thought",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "tree_of_thought"
+      },
+      "family": "reasoning",
+      "description": "Два уровня дерева, по две ветви, оценка и отсечение.",
+      "status": "complete",
+      "generation": {
+        "path": "results/tree_of_thought_20261029T141839141437Z.json",
+        "sha256": "5f9b8c1af8f3e6f27126754ffe2d36cbc559c3cbe7116209c8672639d5767d10"
+      },
+      "quality": {
+        "path": "results/quality_20261029T142239211631Z.json",
+        "sha256": "345aa30789310880bccc11483864abad8977e4423c8cef496f9264eb855c5322"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 28211,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 2996,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 31207,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 31207
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "forced_retrieval",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "forced",
+        "reasoning_strategy": "direct"
+      },
+      "family": "agents",
+      "description": "Python вызывает оба поиска до LLM; function calling отсутствует.",
+      "status": "complete",
+      "generation": {
+        "path": "results/forced_retrieval_20261029T142325440175Z.json",
+        "sha256": "c70d03acac22f0117700d2c846d03c3ac779580ebf6fa69703d0a12cf358bae1"
+      },
+      "quality": {
+        "path": "results/quality_20261029T142401872045Z.json",
+        "sha256": "561524857893f4314cb7c2dccaacf81e56b436aa3b2b62373b3b6c719b186415"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 30048,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3760,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 33808,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 20,
+        "total_tokens": 33808
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "plan_execute",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "plan_execute",
+        "reasoning_strategy": "direct"
+      },
+      "family": "agents",
+      "description": "LLM составляет два запроса, Python исполняет оба поиска.",
+      "status": "grading",
+      "generation": {
+        "path": "results/plan_execute_20261029T142448355412Z.json",
+        "sha256": "b1259301f86a3c643cf53dcb7cd0dd188ff6011d5ac6815b521803bc14f873ba"
+      }
+    }
+  ]
+}

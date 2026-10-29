@@ -1,0 +1,1646 @@
+{
+  "metadata": {
+    "started_at_utc": "2026-10-29T14:04:44.691655+00:00",
+    "finished_at_utc": "2026-10-29T14:04:50.791565+00:00",
+    "embedding_model": "ai-sage/Giga-Embeddings-instruct-3B",
+    "embedding_base_url": "https://foundation-models.api.cloud.ru/v1/",
+    "query_instruction": "Instruct: Given a query, retrieve relevant passages\nQuery: ",
+    "top_k": 5,
+    "questions": 15,
+    "chunks": 9565,
+    "golden_sha256": "5ecc80ea70e243f61d9acfe6ab71b2193654744be3e932463c68cf3eff8a84fa",
+    "corpus_sha256": "888a15c3d9cd7e7c87ae1a6bd2c60a57aed9ab3d88286dc4c1ebd6461ff75b4b",
+    "implementation_sha256": {
+      "knowledge.py": "8d782741012b8f22650a1c3db57c3e7f336872b1655389abeffff7b5ebdf5b6f",
+      "search.py": "610e6960d0905adddf3b5880516d819e91176eb7b0ad0ca5c4948c741d41429b",
+      "semantic.py": "ef535f591e2bda3440bf18dabeffd24c40457d928bba6cccb57eea3032882928",
+      "embeddings.py": "79e4470a88102118e4fe10e56b376e6d42d2f1692cd4e9fe3f73875bae6012a5",
+      "evaluation.py": "bf0a4fa5bb124b1b4f74e2a1ac0e978f3d93bd175d48f6bb0b14fa30835985a6"
+    },
+    "lexical_parameters": {
+      "k1": 1.5,
+      "b": 0.75,
+      "stemming": false
+    },
+    "target_rule": "source_id matches and start_time <= golden timecode < end_time",
+    "timing_note": "Per-question wall time; includes query embedding/cache, excludes index build.",
+    "index_embedding_calls": [],
+    "query_embedding_calls": []
+  },
+  "summary": [
+    {
+      "method": "BM25",
+      "questions": 15,
+      "top_k": 5,
+      "hit_at_1": 0.4666666666666667,
+      "hit_at_k": 0.6,
+      "mrr_at_k": 0.5133333333333333,
+      "source_hit_at_k": 0.8,
+      "errors": 0,
+      "mean_seconds": 0.0035022054663083205
+    },
+    {
+      "method": "Giga Embeddings",
+      "questions": 15,
+      "top_k": 5,
+      "hit_at_1": 0.4666666666666667,
+      "hit_at_k": 0.8,
+      "mrr_at_k": 0.5944444444444444,
+      "source_hit_at_k": 0.9333333333333333,
+      "errors": 0,
+      "mean_seconds": 0.0015695971989771352
+    }
+  ],
+  "cases": [
+    {
+      "case_id": 1,
+      "question": "Кто были сомодераторами IT-завтрака на ПМЭФ-2016 и какие организации они представляли?",
+      "category": "персоналии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_18_OC_it.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_18_OC_it.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.004863583992118947,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0001",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 21.215599885051894
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_17_PRAVLENIE_economy.txt#0049",
+          "source_id": "TRANSFER_2016_06_17_PRAVLENIE_economy.txt",
+          "start_time": "00:48:00",
+          "end_time": "00:49:00",
+          "score": 15.38306782810222
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_17_PRAVLENIE_economy_152.txt#0049",
+          "source_id": "TRANSFER_2016_06_17_PRAVLENIE_economy_152.txt",
+          "start_time": "00:48:00",
+          "end_time": "00:49:00",
+          "score": 15.38306782810222
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_STRATSESSION_aviation.txt#0049",
+          "source_id": "TRANSFER_2011_06_17_STRATSESSION_aviation.txt",
+          "start_time": "00:48:00",
+          "end_time": "00:49:00",
+          "score": 14.656869574971157
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0056",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:55:00",
+          "end_time": "00:56:00",
+          "score": 14.571491003043006
+        }
+      ]
+    },
+    {
+      "case_id": 2,
+      "question": "Какой теме был посвящён IT-завтрак на ПМЭФ-2016?",
+      "category": "название сессии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_18_OC_it.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_18_OC_it.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": 2,
+      "elapsed_seconds": 0.002429333995678462,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0014",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 19.219589754069546
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0056",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:55:00",
+          "end_time": "00:56:00",
+          "score": 14.571491003043006
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0037",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:36:00",
+          "end_time": "00:37:00",
+          "score": 13.25828483775921
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0006",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:05:00",
+          "end_time": "00:06:00",
+          "score": 13.20307246547113
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_24_PRAVLENIE_education.txt#0004",
+          "source_id": "TRANSFER_2014_05_24_PRAVLENIE_education.txt",
+          "start_time": "00:03:00",
+          "end_time": "00:04:00",
+          "score": 12.460117187805608
+        }
+      ]
+    },
+    {
+      "case_id": 3,
+      "question": "Каким по счёту был IT-завтрак на ПМЭФ-2014 и кто были его три соорганизатора?",
+      "category": "факт",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2014_05_24_OC_it.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2014_05_24_OC_it.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.004121874997508712,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0001",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 33.4385520916851
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_PRAVLENIE_branding.txt#0021",
+          "source_id": "TRANSFER_2015_06_20_PRAVLENIE_branding.txt",
+          "start_time": "00:20:00",
+          "end_time": "00:21:00",
+          "score": 18.747675699357913
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0001",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 18.31145367305986
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_17_PRAVLENIE_globalization.txt#0030",
+          "source_id": "TRANSFER_2016_06_17_PRAVLENIE_globalization.txt",
+          "start_time": "00:29:00",
+          "end_time": "00:30:00",
+          "score": 18.08088824589803
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0014",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 17.9020871132042
+        }
+      ]
+    },
+    {
+      "case_id": 4,
+      "question": "Как называлась конференция о стартапах на ПМЭФ-2012 и кем она была организована?",
+      "category": "название сессии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2012_06_23_PRAVLENIE_startup.txt",
+      "expected_timecode": "00:01:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2012_06_23_PRAVLENIE_startup.txt#0002"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.003906375000951812,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2012_06_23_PRAVLENIE_startup.txt#0002",
+          "source_id": "TRANSFER_2012_06_23_PRAVLENIE_startup.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 20.174551268890127
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_PRAVLENIE_branding.txt#0047",
+          "source_id": "TRANSFER_2015_06_20_PRAVLENIE_branding.txt",
+          "start_time": "00:46:00",
+          "end_time": "00:47:00",
+          "score": 18.709676822894796
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_PRAVLENIE_health.txt#0008",
+          "source_id": "TRANSFER_2012_06_22_PRAVLENIE_health.txt",
+          "start_time": "00:07:00",
+          "end_time": "00:08:00",
+          "score": 16.235206084348334
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_OC_technology.txt#0014",
+          "source_id": "TRANSFER_2012_06_22_OC_technology.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 15.958370136457651
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0003",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:02:00",
+          "end_time": "00:03:00",
+          "score": 15.215121867111819
+        }
+      ]
+    },
+    {
+      "case_id": 5,
+      "question": "Кто модерировал панель о кинематографе «Мир без границ» на ПМЭФ-2011?",
+      "category": "персоналии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001"
+      ],
+      "target_rank": 2,
+      "source_rank": 2,
+      "elapsed_seconds": 0.002438750001601875,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_privacy.txt#0006",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_privacy.txt",
+          "start_time": "00:05:00",
+          "end_time": "00:06:00",
+          "score": 15.862285261347257
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 15.408551855346836
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_PRAVLENIE_ecommerce.txt#0033",
+          "source_id": "TRANSFER_2015_06_18_PRAVLENIE_ecommerce.txt",
+          "start_time": "00:32:00",
+          "end_time": "00:33:00",
+          "score": 15.194953380237648
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_PRAVLENIE_branding.txt#0046",
+          "source_id": "TRANSFER_2015_06_20_PRAVLENIE_branding.txt",
+          "start_time": "00:45:00",
+          "end_time": "00:46:00",
+          "score": 13.464506947106061
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_OC_technology.txt#0014",
+          "source_id": "TRANSFER_2012_06_22_OC_technology.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 12.880055793870728
+        }
+      ]
+    },
+    {
+      "case_id": 6,
+      "question": "Какая доля кинопроизводства в Европе, по словам модератора панели о кино на ПМЭФ-2011, осуществляется совместно?",
+      "category": "число",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0038547079893760383,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 39.580982386729865
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0046",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:45:00",
+          "end_time": "00:46:00",
+          "score": 20.407374469209707
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_22_PRAVLENIE_economy_92.txt#0052",
+          "source_id": "TRANSFER_2014_05_22_PRAVLENIE_economy_92.txt",
+          "start_time": "00:51:00",
+          "end_time": "00:52:00",
+          "score": 19.37894012500278
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_PRAVLENIE_cinema.txt#0001",
+          "source_id": "TRANSFER_2012_06_22_PRAVLENIE_cinema.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 18.51373057199586
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_PRAVLENIE_cinema.txt#0019",
+          "source_id": "TRANSFER_2015_06_20_PRAVLENIE_cinema.txt",
+          "start_time": "00:18:00",
+          "end_time": "00:19:00",
+          "score": 17.661052994394186
+        }
+      ]
+    },
+    {
+      "case_id": 7,
+      "question": "Сколько тонн низкообогащённого урана содержит резерв в Ангарске и кто его финансирует (по словам Юкии Амано, ПМЭФ-2015)?",
+      "category": "число",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0038656249962514266,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0002",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 34.180605450443906
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_18_STRATSESSION_nanotech.txt#0017",
+          "source_id": "TRANSFER_2011_06_18_STRATSESSION_nanotech.txt",
+          "start_time": "00:16:00",
+          "end_time": "00:17:00",
+          "score": 15.18592891187085
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_vr.txt#0029",
+          "source_id": "TRANSFER_2016_06_18_OC_vr.txt",
+          "start_time": "00:28:00",
+          "end_time": "00:29:00",
+          "score": 14.393780201084937
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_23_PRAVLENIE_economy_170.txt#0014",
+          "source_id": "TRANSFER_2014_05_23_PRAVLENIE_economy_170.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 14.232624299189983
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_OC_technology.txt#0014",
+          "source_id": "TRANSFER_2012_06_22_OC_technology.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 14.062279616010754
+        }
+      ]
+    },
+    {
+      "case_id": 8,
+      "question": "Кто был исполнительным директором Международного энергетического агентства (МЭА) на брифинге по рынкам нефти и газа на ПМЭФ-2011?",
+      "category": "персоналии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0037896249996265396,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0001",
+          "source_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 58.04684937563839
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_energy.txt#0015",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_energy.txt",
+          "start_time": "00:14:00",
+          "end_time": "00:15:00",
+          "score": 26.309116297619596
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0002",
+          "source_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 26.119891428163854
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_20_STRATSESSION_energy.txt#0006",
+          "source_id": "TRANSFER_2013_06_20_STRATSESSION_energy.txt",
+          "start_time": "00:05:00",
+          "end_time": "00:06:00",
+          "score": 24.9978173485086
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0005",
+          "source_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+          "start_time": "00:04:00",
+          "end_time": "00:05:00",
+          "score": 24.26891135670433
+        }
+      ]
+    },
+    {
+      "case_id": 9,
+      "question": "Сколько ядерных реакторов находилось в эксплуатации в мире и сколько строилось, по данным Юкии Амано на ПМЭФ-2015?",
+      "category": "число",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": 1,
+      "elapsed_seconds": 0.003577458002837375,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0012",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:11:00",
+          "end_time": "00:12:00",
+          "score": 26.889181496705817
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_nuclear.txt#0019",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_nuclear.txt",
+          "start_time": "00:18:00",
+          "end_time": "00:19:00",
+          "score": 22.484549741738615
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0010",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:09:00",
+          "end_time": "00:10:00",
+          "score": 18.634438060528694
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_nuclear.txt#0021",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_nuclear.txt",
+          "start_time": "00:20:00",
+          "end_time": "00:21:00",
+          "score": 18.46615519563571
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt#0004",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt",
+          "start_time": "00:03:00",
+          "end_time": "00:04:00",
+          "score": 18.38228263407525
+        }
+      ]
+    },
+    {
+      "case_id": 10,
+      "question": "Сколько ядерных реакторов было введено в строй за год перед ПМЭФ-2016 и как это соотносится с предыдущим годом (по Кристофу Фраю, WEC)?",
+      "category": "число",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_16_OC_nuclear.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_16_OC_nuclear.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": null,
+      "elapsed_seconds": 0.005538208002690226,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_drones.txt#0039",
+          "source_id": "TRANSFER_2016_06_16_OC_drones.txt",
+          "start_time": "00:38:00",
+          "end_time": "00:39:00",
+          "score": 23.738369176257525
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_OC_pharma.txt#0028",
+          "source_id": "TRANSFER_2015_06_20_OC_pharma.txt",
+          "start_time": "00:27:00",
+          "end_time": "00:28:00",
+          "score": 22.54259782189922
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_STRATSESSION_energy.txt#0035",
+          "source_id": "TRANSFER_2012_06_21_STRATSESSION_energy.txt",
+          "start_time": "00:34:00",
+          "end_time": "00:35:00",
+          "score": 21.602379060642573
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0003",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:02:00",
+          "end_time": "00:03:00",
+          "score": 21.172449822559773
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_21_PRAVLENIE_innovation.txt#0048",
+          "source_id": "TRANSFER_2013_06_21_PRAVLENIE_innovation.txt",
+          "start_time": "00:47:00",
+          "end_time": "00:48:00",
+          "score": 20.458725670469303
+        }
+      ]
+    },
+    {
+      "case_id": 11,
+      "question": "Как называлась сессия об инфраструктуре на ПМЭФ-2016 и кто на ней представлял Hyperloop Transportation Technologies?",
+      "category": "название сессии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_16_OC_infrastructure.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_16_OC_infrastructure.txt#0001"
+      ],
+      "target_rank": 5,
+      "source_rank": 5,
+      "elapsed_seconds": 0.003455041005508974,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_hyperloop.txt#0001",
+          "source_id": "TRANSFER_2016_06_16_OC_hyperloop.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 20.37760491752738
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_hyperloop.txt#0009",
+          "source_id": "TRANSFER_2016_06_16_OC_hyperloop.txt",
+          "start_time": "00:08:00",
+          "end_time": "00:09:00",
+          "score": 18.34698643005024
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_drones.txt#0039",
+          "source_id": "TRANSFER_2016_06_16_OC_drones.txt",
+          "start_time": "00:38:00",
+          "end_time": "00:39:00",
+          "score": 16.62851211057447
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_17_PRAVLENIE_uber.txt#0004",
+          "source_id": "TRANSFER_2016_06_17_PRAVLENIE_uber.txt",
+          "start_time": "00:03:00",
+          "end_time": "00:04:00",
+          "score": 16.207307960938035
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_infrastructure.txt#0001",
+          "source_id": "TRANSFER_2016_06_16_OC_infrastructure.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 15.2901415382177
+        }
+      ]
+    },
+    {
+      "case_id": 12,
+      "question": "Какую должность занимал Олег Бударгин на момент панели «Доступные сети…» на ПМЭФ-2013?",
+      "category": "персоналии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2013_06_21_OC_energy.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2013_06_21_OC_energy.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0015819160034880042,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0001",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 33.17935009037665
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_19_OC_economy.txt#0028",
+          "source_id": "TRANSFER_2015_06_19_OC_economy.txt",
+          "start_time": "00:27:00",
+          "end_time": "00:28:00",
+          "score": 18.834079925260152
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0018",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:17:00",
+          "end_time": "00:18:00",
+          "score": 18.610927429128637
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0002",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 15.589517397663602
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0003",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:02:00",
+          "end_time": "00:03:00",
+          "score": 15.297684360087498
+        }
+      ]
+    },
+    {
+      "case_id": 13,
+      "question": "Кто представлял Министерство природных ресурсов и экологии РФ на панели о «зелёной» повестке на ПМЭФ-2013?",
+      "category": "персоналии",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2013_06_22_PRAVLENIE_environment.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0027622920024441555,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt#0001",
+          "source_id": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 34.469671155350404
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt#0007",
+          "source_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt",
+          "start_time": "00:06:00",
+          "end_time": "00:07:00",
+          "score": 28.189058039129794
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt#0008",
+          "source_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt",
+          "start_time": "00:07:00",
+          "end_time": "00:08:00",
+          "score": 28.059455205500136
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt#0001",
+          "source_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 27.396582444441343
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt#0003",
+          "source_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt",
+          "start_time": "00:02:00",
+          "end_time": "00:03:00",
+          "score": 25.864393658631407
+        }
+      ]
+    },
+    {
+      "case_id": 14,
+      "question": "Кто модерировал сессию «Россия – Финляндия» об образовании на ПМЭФ-2015 и какой прогноз о влиянии цифровизации на занятость он привёл?",
+      "category": "факт",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2015_06_18_OC_education.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2015_06_18_OC_education.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": null,
+      "elapsed_seconds": 0.0030204580107238144,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_investment.txt#0005",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_investment.txt",
+          "start_time": "00:04:00",
+          "end_time": "00:05:00",
+          "score": 22.75291582033507
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_investment.txt#0001",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_investment.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 18.718569883552693
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_23_PRAVLENIE_health.txt#0033",
+          "source_id": "TRANSFER_2014_05_23_PRAVLENIE_health.txt",
+          "start_time": "00:32:00",
+          "end_time": "00:33:00",
+          "score": 18.251221679973526
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_17_STRATSESSION_industry.txt#0033",
+          "source_id": "TRANSFER_2016_06_17_STRATSESSION_industry.txt",
+          "start_time": "00:32:00",
+          "end_time": "00:33:00",
+          "score": 17.896575963001215
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_OC_technology.txt#0014",
+          "source_id": "TRANSFER_2012_06_22_OC_technology.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 17.348021795832164
+        }
+      ]
+    },
+    {
+      "case_id": 15,
+      "question": "Столетие какого института отмечалось в 2016 году, по словам В. Падалко на сессии по торговле ПМЭФ-2016?",
+      "category": "факт",
+      "method": "BM25",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_16_PRAVLENIE_trade.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_16_PRAVLENIE_trade.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": null,
+      "elapsed_seconds": 0.003327832993818447,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0056",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:55:00",
+          "end_time": "00:56:00",
+          "score": 16.45344913972727
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_19_PRAVLENIE_economy.txt#0002",
+          "source_id": "TRANSFER_2015_06_19_PRAVLENIE_economy.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 15.005510768641734
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_19_OC_economy_216.txt#0025",
+          "source_id": "TRANSFER_2015_06_19_OC_economy_216.txt",
+          "start_time": "00:24:00",
+          "end_time": "00:25:00",
+          "score": 14.98536460289898
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_infrastructure.txt#0030",
+          "source_id": "TRANSFER_2016_06_16_OC_infrastructure.txt",
+          "start_time": "00:29:00",
+          "end_time": "00:30:00",
+          "score": 14.634592416622564
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_22_PRAVLENIE_economy_92.txt#0001",
+          "source_id": "TRANSFER_2014_05_22_PRAVLENIE_economy_92.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 14.030352616430957
+        }
+      ]
+    },
+    {
+      "case_id": 1,
+      "question": "Кто были сомодераторами IT-завтрака на ПМЭФ-2016 и какие организации они представляли?",
+      "category": "персоналии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_18_OC_it.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_18_OC_it.txt#0001"
+      ],
+      "target_rank": 4,
+      "source_rank": 4,
+      "elapsed_seconds": 0.003946541997720487,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2015_06_20_OC_it.txt#0001",
+          "source_id": "TRANSFER_2015_06_20_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.4686800241470337
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0001",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.44436609745025635
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0006",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:05:00",
+          "end_time": "00:06:00",
+          "score": 0.44121360778808594
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0001",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.4152374565601349
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0008",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:07:00",
+          "end_time": "00:08:00",
+          "score": 0.4037768840789795
+        }
+      ]
+    },
+    {
+      "case_id": 2,
+      "question": "Какой теме был посвящён IT-завтрак на ПМЭФ-2016?",
+      "category": "название сессии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_18_OC_it.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_18_OC_it.txt#0001"
+      ],
+      "target_rank": 2,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0013386670034378767,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0056",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:55:00",
+          "end_time": "00:56:00",
+          "score": 0.4602404534816742
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0001",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.45309609174728394
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0008",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:07:00",
+          "end_time": "00:08:00",
+          "score": 0.45207878947257996
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_OC_it.txt#0002",
+          "source_id": "TRANSFER_2015_06_20_OC_it.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.4268203675746918
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0007",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:06:00",
+          "end_time": "00:07:00",
+          "score": 0.394331693649292
+        }
+      ]
+    },
+    {
+      "case_id": 3,
+      "question": "Каким по счёту был IT-завтрак на ПМЭФ-2014 и кто были его три соорганизатора?",
+      "category": "факт",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2014_05_24_OC_it.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2014_05_24_OC_it.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0018051249935524538,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0001",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.5298919677734375
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_24_OC_it.txt#0006",
+          "source_id": "TRANSFER_2014_05_24_OC_it.txt",
+          "start_time": "00:05:00",
+          "end_time": "00:06:00",
+          "score": 0.42058265209198
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_18_OC_it.txt#0001",
+          "source_id": "TRANSFER_2016_06_18_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.37956172227859497
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_OC_it.txt#0002",
+          "source_id": "TRANSFER_2015_06_20_OC_it.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.3647771179676056
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_OC_it.txt#0001",
+          "source_id": "TRANSFER_2015_06_20_OC_it.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.3611803352832794
+        }
+      ]
+    },
+    {
+      "case_id": 4,
+      "question": "Как называлась конференция о стартапах на ПМЭФ-2012 и кем она была организована?",
+      "category": "название сессии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2012_06_23_PRAVLENIE_startup.txt",
+      "expected_timecode": "00:01:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2012_06_23_PRAVLENIE_startup.txt#0002"
+      ],
+      "target_rank": null,
+      "source_rank": null,
+      "elapsed_seconds": 0.0018310830055270344,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2014_05_22_PRAVLENIE_innovation.txt#0001",
+          "source_id": "TRANSFER_2014_05_22_PRAVLENIE_innovation.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.3412665128707886
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_STRATSESSION_innovation.txt#0001",
+          "source_id": "TRANSFER_2012_06_22_STRATSESSION_innovation.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.33285877108573914
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_22_PRAVLENIE_innovation.txt#0010",
+          "source_id": "TRANSFER_2014_05_22_PRAVLENIE_innovation.txt",
+          "start_time": "00:09:00",
+          "end_time": "00:10:00",
+          "score": 0.3305622339248657
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_22_PRAVLENIE_innovation.txt#0006",
+          "source_id": "TRANSFER_2014_05_22_PRAVLENIE_innovation.txt",
+          "start_time": "00:05:00",
+          "end_time": "00:06:00",
+          "score": 0.3277074098587036
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_STRATSESSION_innovation.txt#0015",
+          "source_id": "TRANSFER_2012_06_22_STRATSESSION_innovation.txt",
+          "start_time": "00:14:00",
+          "end_time": "00:15:00",
+          "score": 0.3258281946182251
+        }
+      ]
+    },
+    {
+      "case_id": 5,
+      "question": "Кто модерировал панель о кинематографе «Мир без границ» на ПМЭФ-2011?",
+      "category": "персоналии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.001373791994410567,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.5015317797660828
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_PRAVLENIE_cinema.txt#0005",
+          "source_id": "TRANSFER_2015_06_20_PRAVLENIE_cinema.txt",
+          "start_time": "00:04:00",
+          "end_time": "00:05:00",
+          "score": 0.3382315933704376
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_20_PRAVLENIE_cinema.txt#0001",
+          "source_id": "TRANSFER_2015_06_20_PRAVLENIE_cinema.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.33279386162757874
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_22_PRAVLENIE_cinema.txt#0001",
+          "source_id": "TRANSFER_2012_06_22_PRAVLENIE_cinema.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.32554399967193604
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0082",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "01:21:00",
+          "end_time": "01:22:00",
+          "score": 0.31890666484832764
+        }
+      ]
+    },
+    {
+      "case_id": 6,
+      "question": "Какая доля кинопроизводства в Европе, по словам модератора панели о кино на ПМЭФ-2011, осуществляется совместно?",
+      "category": "число",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001"
+      ],
+      "target_rank": 3,
+      "source_rank": 1,
+      "elapsed_seconds": 0.001254666000022553,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0010",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:09:00",
+          "end_time": "00:10:00",
+          "score": 0.4539070129394531
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0012",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:11:00",
+          "end_time": "00:12:00",
+          "score": 0.37012776732444763
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.3607032597064972
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0007",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:06:00",
+          "end_time": "00:07:00",
+          "score": 0.35642316937446594
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0016",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt",
+          "start_time": "00:15:00",
+          "end_time": "00:16:00",
+          "score": 0.349902480840683
+        }
+      ]
+    },
+    {
+      "case_id": 7,
+      "question": "Сколько тонн низкообогащённого урана содержит резерв в Ангарске и кто его финансирует (по словам Юкии Амано, ПМЭФ-2015)?",
+      "category": "число",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001"
+      ],
+      "target_rank": 2,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0012907080090371892,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0002",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.3970929682254791
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.38657185435295105
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0009",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:08:00",
+          "end_time": "00:09:00",
+          "score": 0.2942107617855072
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_nuclear.txt#0029",
+          "source_id": "TRANSFER_2016_06_16_OC_nuclear.txt",
+          "start_time": "00:28:00",
+          "end_time": "00:29:00",
+          "score": 0.28297746181488037
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0003",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:02:00",
+          "end_time": "00:03:00",
+          "score": 0.28243646025657654
+        }
+      ]
+    },
+    {
+      "case_id": 8,
+      "question": "Кто был исполнительным директором Международного энергетического агентства (МЭА) на брифинге по рынкам нефти и газа на ПМЭФ-2011?",
+      "category": "персоналии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0013293329975567758,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0001",
+          "source_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.56971275806427
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt#0002",
+          "source_id": "TRANSFER_2011_06_16_STRATSESSION_oil.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.4358382821083069
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_20_STRATSESSION_energy.txt#0001",
+          "source_id": "TRANSFER_2013_06_20_STRATSESSION_energy.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.43196818232536316
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_energy.txt#0007",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_energy.txt",
+          "start_time": "00:06:00",
+          "end_time": "00:07:00",
+          "score": 0.397874116897583
+        },
+        {
+          "chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_energy.txt#0001",
+          "source_id": "TRANSFER_2011_06_17_PRAVLENIE_energy.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.37154123187065125
+        }
+      ]
+    },
+    {
+      "case_id": 9,
+      "question": "Сколько ядерных реакторов находилось в эксплуатации в мире и сколько строилось, по данным Юкии Амано на ПМЭФ-2015?",
+      "category": "число",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001"
+      ],
+      "target_rank": 3,
+      "source_rank": 3,
+      "elapsed_seconds": 0.0012906659976579249,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_nuclear.txt#0001",
+          "source_id": "TRANSFER_2016_06_16_OC_nuclear.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.3755515515804291
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt#0005",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt",
+          "start_time": "00:04:00",
+          "end_time": "00:05:00",
+          "score": 0.37441471219062805
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001",
+          "source_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.349110871553421
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_nuclear.txt#0045",
+          "source_id": "TRANSFER_2016_06_16_OC_nuclear.txt",
+          "start_time": "00:44:00",
+          "end_time": "00:45:00",
+          "score": 0.3386206030845642
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt#0001",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.33234506845474243
+        }
+      ]
+    },
+    {
+      "case_id": 10,
+      "question": "Сколько ядерных реакторов было введено в строй за год перед ПМЭФ-2016 и как это соотносится с предыдущим годом (по Кристофу Фраю, WEC)?",
+      "category": "число",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_16_OC_nuclear.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_16_OC_nuclear.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0013364169863052666,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_nuclear.txt#0001",
+          "source_id": "TRANSFER_2016_06_16_OC_nuclear.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.38711315393447876
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_nuclear.txt#0045",
+          "source_id": "TRANSFER_2016_06_16_OC_nuclear.txt",
+          "start_time": "00:44:00",
+          "end_time": "00:45:00",
+          "score": 0.3467645049095154
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt#0005",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt",
+          "start_time": "00:04:00",
+          "end_time": "00:05:00",
+          "score": 0.29876503348350525
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_nuclear.txt#0043",
+          "source_id": "TRANSFER_2016_06_16_OC_nuclear.txt",
+          "start_time": "00:42:00",
+          "end_time": "00:43:00",
+          "score": 0.2969971299171448
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt#0002",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_nuclear.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.28646421432495117
+        }
+      ]
+    },
+    {
+      "case_id": 11,
+      "question": "Как называлась сессия об инфраструктуре на ПМЭФ-2016 и кто на ней представлял Hyperloop Transportation Technologies?",
+      "category": "название сессии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_16_OC_infrastructure.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_16_OC_infrastructure.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": 4,
+      "elapsed_seconds": 0.0013544170069508255,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2016_06_17_PRAVLENIE_uber.txt#0001",
+          "source_id": "TRANSFER_2016_06_17_PRAVLENIE_uber.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.41564878821372986
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_hyperloop.txt#0001",
+          "source_id": "TRANSFER_2016_06_16_OC_hyperloop.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.4147530794143677
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_hyperloop.txt#0009",
+          "source_id": "TRANSFER_2016_06_16_OC_hyperloop.txt",
+          "start_time": "00:08:00",
+          "end_time": "00:09:00",
+          "score": 0.40582039952278137
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_OC_infrastructure.txt#0010",
+          "source_id": "TRANSFER_2016_06_16_OC_infrastructure.txt",
+          "start_time": "00:09:00",
+          "end_time": "00:10:00",
+          "score": 0.40554121136665344
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_17_PRAVLENIE_uber.txt#0010",
+          "source_id": "TRANSFER_2016_06_17_PRAVLENIE_uber.txt",
+          "start_time": "00:09:00",
+          "end_time": "00:10:00",
+          "score": 0.38265472650527954
+        }
+      ]
+    },
+    {
+      "case_id": 12,
+      "question": "Какую должность занимал Олег Бударгин на момент панели «Доступные сети…» на ПМЭФ-2013?",
+      "category": "персоналии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2013_06_21_OC_energy.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2013_06_21_OC_energy.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0012996250006835908,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0001",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.5315660238265991
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_23_OC_energy.txt#0005",
+          "source_id": "TRANSFER_2014_05_23_OC_energy.txt",
+          "start_time": "00:04:00",
+          "end_time": "00:05:00",
+          "score": 0.41927289962768555
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0033",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:32:00",
+          "end_time": "00:33:00",
+          "score": 0.397093802690506
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0014",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:13:00",
+          "end_time": "00:14:00",
+          "score": 0.3936103284358978
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_21_OC_energy.txt#0029",
+          "source_id": "TRANSFER_2013_06_21_OC_energy.txt",
+          "start_time": "00:28:00",
+          "end_time": "00:29:00",
+          "score": 0.3818979859352112
+        }
+      ]
+    },
+    {
+      "case_id": 13,
+      "question": "Кто представлял Министерство природных ресурсов и экологии РФ на панели о «зелёной» повестке на ПМЭФ-2013?",
+      "category": "персоналии",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2013_06_22_PRAVLENIE_environment.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.0014380419888766482,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt#0001",
+          "source_id": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.45364874601364136
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt#0008",
+          "source_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt",
+          "start_time": "00:07:00",
+          "end_time": "00:08:00",
+          "score": 0.424994558095932
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_23_OC_environment.txt#0026",
+          "source_id": "TRANSFER_2012_06_23_OC_environment.txt",
+          "start_time": "00:25:00",
+          "end_time": "00:26:00",
+          "score": 0.3920922875404358
+        },
+        {
+          "chunk_id": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt#0002",
+          "source_id": "TRANSFER_2013_06_22_PRAVLENIE_environment.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.3681122362613678
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt#0002",
+          "source_id": "TRANSFER_2016_06_16_STRATSESSION_environment.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.3663793206214905
+        }
+      ]
+    },
+    {
+      "case_id": 14,
+      "question": "Кто модерировал сессию «Россия – Финляндия» об образовании на ПМЭФ-2015 и какой прогноз о влиянии цифровизации на занятость он привёл?",
+      "category": "факт",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2015_06_18_OC_education.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2015_06_18_OC_education.txt#0001"
+      ],
+      "target_rank": 1,
+      "source_rank": 1,
+      "elapsed_seconds": 0.001400084001943469,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2015_06_18_OC_education.txt#0001",
+          "source_id": "TRANSFER_2015_06_18_OC_education.txt",
+          "start_time": "00:00:00",
+          "end_time": "00:01:00",
+          "score": 0.4819543957710266
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_OC_education.txt#0017",
+          "source_id": "TRANSFER_2015_06_18_OC_education.txt",
+          "start_time": "00:16:00",
+          "end_time": "00:17:00",
+          "score": 0.43189558386802673
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_OC_education.txt#0024",
+          "source_id": "TRANSFER_2015_06_18_OC_education.txt",
+          "start_time": "00:23:00",
+          "end_time": "00:24:00",
+          "score": 0.379379004240036
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_OC_education.txt#0025",
+          "source_id": "TRANSFER_2015_06_18_OC_education.txt",
+          "start_time": "00:24:00",
+          "end_time": "00:25:00",
+          "score": 0.36603087186813354
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_18_OC_education.txt#0013",
+          "source_id": "TRANSFER_2015_06_18_OC_education.txt",
+          "start_time": "00:12:00",
+          "end_time": "00:13:00",
+          "score": 0.35142943263053894
+        }
+      ]
+    },
+    {
+      "case_id": 15,
+      "question": "Столетие какого института отмечалось в 2016 году, по словам В. Падалко на сессии по торговле ПМЭФ-2016?",
+      "category": "факт",
+      "method": "Giga Embeddings",
+      "top_k": 5,
+      "expected_source": "TRANSFER_2016_06_16_PRAVLENIE_trade.txt",
+      "expected_timecode": "00:00:00",
+      "expected_chunk_ids": [
+        "TRANSFER_2016_06_16_PRAVLENIE_trade.txt#0001"
+      ],
+      "target_rank": null,
+      "source_rank": 5,
+      "elapsed_seconds": 0.0012547910009743646,
+      "error": null,
+      "retrieved": [
+        {
+          "chunk_id": "TRANSFER_2014_05_22_PRAVLENIE_economy_92.txt#0012",
+          "source_id": "TRANSFER_2014_05_22_PRAVLENIE_economy_92.txt",
+          "start_time": "00:11:00",
+          "end_time": "00:12:00",
+          "score": 0.28022444248199463
+        },
+        {
+          "chunk_id": "TRANSFER_2014_05_23_PRAVLENIE_agriculture.txt#0008",
+          "source_id": "TRANSFER_2014_05_23_PRAVLENIE_agriculture.txt",
+          "start_time": "00:07:00",
+          "end_time": "00:08:00",
+          "score": 0.2798728942871094
+        },
+        {
+          "chunk_id": "TRANSFER_2015_06_19_PRAVLENIE_economy.txt#0026",
+          "source_id": "TRANSFER_2015_06_19_PRAVLENIE_economy.txt",
+          "start_time": "00:25:00",
+          "end_time": "00:26:00",
+          "score": 0.2791202962398529
+        },
+        {
+          "chunk_id": "TRANSFER_2012_06_21_PRAVLENIE_export.txt#0033",
+          "source_id": "TRANSFER_2012_06_21_PRAVLENIE_export.txt",
+          "start_time": "00:32:00",
+          "end_time": "00:33:00",
+          "score": 0.27801278233528137
+        },
+        {
+          "chunk_id": "TRANSFER_2016_06_16_PRAVLENIE_trade.txt#0002",
+          "source_id": "TRANSFER_2016_06_16_PRAVLENIE_trade.txt",
+          "start_time": "00:01:00",
+          "end_time": "00:02:00",
+          "score": 0.2751048803329468
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1612 @@
+{
+  "version": 1,
+  "status": "complete",
+  "started_at_utc": "2026-10-29T13:05:32.389598+00:00",
+  "baseline": {
+    "path": "results/baseline_20261029T130344770446Z.json",
+    "sha256": "560c774c2b1f7077a3aae8b9a33a20966b8557667ef862ce048a9c11d5acfe5d"
+  },
+  "baseline_quality": {
+    "path": "results/quality_20261029T130434830332Z.json",
+    "sha256": "23c9c3cbdfa9739f4025770efbc6e1f85f11eaceafa14c9d92a13a6036e5ecd0"
+  },
+  "experiments": [
+    {
+      "name": "deduplicated",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "deduplicated",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "failed",
+      "generation": {
+        "path": "results/deduplicated_20261029T130532587972Z.json",
+        "sha256": "9bc6a22ab9c8a113cc0147b93b201d4bfc8845fa011f704c56f859c660c15167"
+      },
+      "quality": {
+        "path": "results/quality_20261029T130612003124Z.json",
+        "sha256": "ad25043db933331e96765603d541ea84ed7b0fc43870cc1c602b5b6be0b28175"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31055,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3531,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 34586,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 34586
+      },
+      "generation_status": "complete",
+      "quality_status": "complete_with_judge_errors"
+    },
+    {
+      "name": "focused",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "focused",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/focused_20261029T130712247269Z.json",
+        "sha256": "b8eb3d4c2854d06038c830fa05fd52812b1f7af5c1028159abaccddd44781ae6"
+      },
+      "quality": {
+        "path": "results/quality_20261029T130753999531Z.json",
+        "sha256": "64ad224c47a9a3d7ea8444d099b6638bf65ed5cd8e8d590421cb48e75dd99ce4"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 29153,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3475,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 32628,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 32628
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "focused_evidence",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "focused",
+        "prompt_mode": "evidence"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/focused_evidence_20261029T130843791917Z.json",
+        "sha256": "edc92045cfdca250d4960acfa1ca046acb1a7a9d5bc7652be2bbaa2d89fdb549"
+      },
+      "quality": {
+        "path": "results/quality_20261029T130931822214Z.json",
+        "sha256": "68d73049403ba69e17379af49efb4d43b71770deb40374279bb809ce7002ae35"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 28152,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3297,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 31449,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 31449
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "top_k_3",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 3,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "failed",
+      "generation": {
+        "path": "results/top_k_3_20261029T131013256218Z.json",
+        "sha256": "160753200dde07341278dd953f03f1bfa3988e227eca90d8f95ca5220f3b49df"
+      },
+      "quality": {
+        "path": "results/quality_20261029T131056919568Z.json",
+        "sha256": "a1450dc721608da166217e11ebbf63e2005ba750eca0fbe5f8fbdaa7a544e525"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31964,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3592,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 35556,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 35556
+      },
+      "generation_status": "complete",
+      "quality_status": "complete_with_judge_errors"
+    },
+    {
+      "name": "compact",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "compact",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "direct"
+      },
+      "family": "tokens",
+      "description": "",
+      "status": "complete",
+      "generation": {
+        "path": "results/compact_20261029T131148825267Z.json",
+        "sha256": "07c66409af42764949143f740f13be99cb6c858f26de2e48bb0b283dd55b6c39"
+      },
+      "quality": {
+        "path": "results/quality_20261029T131230435203Z.json",
+        "sha256": "e2be83647606583dd9243ed3038a33c3673a53e37b951d3d3406e3e7909c9e46"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31770,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3700,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 35470,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 35470
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "self_consistency",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "self_consistency"
+      },
+      "family": "reasoning",
+      "description": "Три независимых решения и голосование по эквивалентным ответам.",
+      "status": "complete",
+      "generation": {
+        "path": "results/self_consistency_20261029T131325912828Z.json",
+        "sha256": "e37fe8bda20c5a25d309d6013f697c6bc634972ea5510597c857777ddf61e7ac"
+      },
+      "quality": {
+        "path": "results/quality_20261029T131456204193Z.json",
+        "sha256": "9fd68364b5cc3c358e92aadb145153ce406ac0a5e3f31f2a9ef70378977d7341"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 28530,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3198,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 31728,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 31728
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "tree_of_thought",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "function_calling",
+        "reasoning_strategy": "tree_of_thought"
+      },
+      "family": "reasoning",
+      "description": "Два уровня дерева, по две ветви, оценка и отсечение.",
+      "status": "complete",
+      "generation": {
+        "path": "results/tree_of_thought_20261029T131549521370Z.json",
+        "sha256": "7f5cd7b7ae432083d4589984db5d285a8ac74ac1c713daa746e947fb0b57b113"
+      },
+      "quality": {
+        "path": "results/quality_20261029T131844640683Z.json",
+        "sha256": "bb3618e715b45b7ea7d0fe623addab3da72cfc3f003500fb52cb5fa0b0bd9f60"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 28067,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 2987,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 31054,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 31054
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "forced_retrieval",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "forced",
+        "reasoning_strategy": "direct"
+      },
+      "family": "agents",
+      "description": "Python вызывает оба поиска до LLM; function calling отсутствует.",
+      "status": "complete",
+      "generation": {
+        "path": "results/forced_retrieval_20261029T131937996838Z.json",
+        "sha256": "a2ff39479976154b72880678e4430d7a32d6bd7ca3d72de22ceeb4eb00e6d86e"
+      },
+      "quality": {
+        "path": "results/quality_20261029T132008642542Z.json",
+        "sha256": "a300cc0874e83a52abaa20f0d5ba974d5a5e6714466729907ff66dafe78ba76e"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 30439,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3409,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 33848,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 20,
+        "total_tokens": 33848
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    },
+    {
+      "name": "plan_execute",
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "execution": {
+        "agent_strategy": "plan_execute",
+        "reasoning_strategy": "direct"
+      },
+      "family": "agents",
+      "description": "LLM составляет два запроса, Python исполняет оба поиска.",
+      "status": "complete",
+      "generation": {
+        "path": "results/plan_execute_20261029T132100963049Z.json",
+        "sha256": "3b931482a31dcf0e3dc58de79e6fb75fec91a1d13cd2f4ce2d35440ef485190a"
+      },
+      "quality": {
+        "path": "results/quality_20261029T132155995644Z.json",
+        "sha256": "4f31156c6f5147bf2c09f183cb8ec4314aceeac8debb7140aec231616aa889fb"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 29019,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3310,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 32329,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 18,
+        "total_tokens": 32329
+      },
+      "generation_status": "complete",
+      "quality_status": "complete"
+    }
+  ],
+  "finished_at_utc": "2026-10-29T13:23:57.325241+00:00",
+  "comparison": {
+    "status": "no_eligible_winner",
+    "baseline": {
+      "generation": {
+        "path": "results/baseline_20261029T130344770446Z.json",
+        "sha256": "560c774c2b1f7077a3aae8b9a33a20966b8557667ef862ce048a9c11d5acfe5d"
+      },
+      "quality_report": {
+        "path": "results/quality_20261029T130434830332Z.json",
+        "sha256": "23c9c3cbdfa9739f4025770efbc6e1f85f11eaceafa14c9d92a13a6036e5ecd0"
+      },
+      "efficiency": {
+        "questions": 15,
+        "assistant_chat": {
+          "known_prompt_tokens": 153591,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2526,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 156117,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 31,
+          "total_tokens": 156117,
+          "tokens_per_question": 10407.8,
+          "tokens_per_correct_answer": 13009.75,
+          "tokens_per_supported_correct_answer": 14192.454545454546
+        },
+        "query_embeddings": {
+          "known_prompt_tokens": 481,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 0,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 481,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 14,
+          "total_tokens": 481
+        },
+        "index_embeddings": {
+          "known_prompt_tokens": 0,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 0,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 0,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 0,
+          "total_tokens": 0
+        },
+        "quality": {
+          "content_correct": 12,
+          "supported_correct": 11,
+          "content_unknown": 0,
+          "supported_unknown": 0,
+          "pipeline_errors": 0,
+          "abstentions": 1,
+          "unjudged": 0,
+          "judge_errors": 0,
+          "content_correct_rate": 0.8,
+          "content_correct_rate_lower_bound": 0.8,
+          "content_correct_rate_upper_bound": 0.8,
+          "supported_correct_rate": 0.7333333333333333,
+          "supported_correct_rate_lower_bound": 0.7333333333333333,
+          "supported_correct_rate_upper_bound": 0.7333333333333333
+        }
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 31994,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3633,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 35627,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 19,
+        "total_tokens": 35627
+      }
+    },
+    "experiments": [
+      {
+        "name": "deduplicated",
+        "eligible": false,
+        "rejection_reasons": [
+          "Эксперимент завершился ошибкой: failed"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "deduplicated",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/deduplicated_20261029T130532587972Z.json",
+          "sha256": "9bc6a22ab9c8a113cc0147b93b201d4bfc8845fa011f704c56f859c660c15167"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T130612003124Z.json",
+          "sha256": "ad25043db933331e96765603d541ea84ed7b0fc43870cc1c602b5b6be0b28175"
+        },
+        "family": "tokens",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 31055,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3531,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 34586,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 19,
+          "total_tokens": 34586
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 150455,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2488,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 152943,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 31,
+          "total_tokens": 152943
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 150455,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 2488,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 152943,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 31,
+            "total_tokens": 152943,
+            "tokens_per_question": 10196.2,
+            "tokens_per_correct_answer": null,
+            "tokens_per_supported_correct_answer": null
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 241,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 241,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 7,
+            "total_tokens": 241
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 11,
+            "supported_correct": 10,
+            "content_unknown": 1,
+            "supported_unknown": 1,
+            "pipeline_errors": 0,
+            "abstentions": 1,
+            "unjudged": 0,
+            "judge_errors": 1,
+            "content_correct_rate": null,
+            "content_correct_rate_lower_bound": 0.7333333333333333,
+            "content_correct_rate_upper_bound": 0.8,
+            "supported_correct_rate": null,
+            "supported_correct_rate_lower_bound": 0.6666666666666666,
+            "supported_correct_rate_upper_bound": 0.7333333333333333
+          }
+        }
+      },
+      {
+        "name": "focused",
+        "eligible": false,
+        "rejection_reasons": [
+          "Снижение content_correct",
+          "Снижение supported_correct"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "focused",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/focused_20261029T130712247269Z.json",
+          "sha256": "b8eb3d4c2854d06038c830fa05fd52812b1f7af5c1028159abaccddd44781ae6"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T130753999531Z.json",
+          "sha256": "64ad224c47a9a3d7ea8444d099b6638bf65ed5cd8e8d590421cb48e75dd99ce4"
+        },
+        "family": "tokens",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 29153,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3475,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 32628,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 18,
+          "total_tokens": 32628
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 113051,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2506,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 115557,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 31,
+          "total_tokens": 115557
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 113051,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 2506,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 115557,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 31,
+            "total_tokens": 115557,
+            "tokens_per_question": 7703.8,
+            "tokens_per_correct_answer": 11555.7,
+            "tokens_per_supported_correct_answer": 12839.666666666666
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 324,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 324,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 9,
+            "total_tokens": 324
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 10,
+            "supported_correct": 9,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 2,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.6666666666666666,
+            "content_correct_rate_lower_bound": 0.6666666666666666,
+            "content_correct_rate_upper_bound": 0.6666666666666666,
+            "supported_correct_rate": 0.6,
+            "supported_correct_rate_lower_bound": 0.6,
+            "supported_correct_rate_upper_bound": 0.6
+          }
+        },
+        "demo_compatible": true,
+        "token_savings": 40560,
+        "token_savings_percent": 25.98051461403947,
+        "paired": {
+          "content_correct": {
+            "improved": [],
+            "regressed": [
+              9,
+              14
+            ]
+          },
+          "supported_correct": {
+            "improved": [],
+            "regressed": [
+              12,
+              14
+            ]
+          }
+        },
+        "quality_retained": false,
+        "token_reduced": true
+      },
+      {
+        "name": "focused_evidence",
+        "eligible": false,
+        "rejection_reasons": [
+          "Снижение content_correct",
+          "Снижение supported_correct"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "focused",
+          "prompt_mode": "evidence"
+        },
+        "generation": {
+          "path": "results/focused_evidence_20261029T130843791917Z.json",
+          "sha256": "edc92045cfdca250d4960acfa1ca046acb1a7a9d5bc7652be2bbaa2d89fdb549"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T130931822214Z.json",
+          "sha256": "68d73049403ba69e17379af49efb4d43b71770deb40374279bb809ce7002ae35"
+        },
+        "family": "tokens",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 28152,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3297,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 31449,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 18,
+          "total_tokens": 31449
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 112823,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2210,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 115033,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 31,
+          "total_tokens": 115033
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 112823,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 2210,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 115033,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 31,
+            "total_tokens": 115033,
+            "tokens_per_question": 7668.866666666667,
+            "tokens_per_correct_answer": 11503.3,
+            "tokens_per_supported_correct_answer": 14379.125
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 500,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 500,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 14,
+            "total_tokens": 500
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 10,
+            "supported_correct": 8,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 2,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.6666666666666666,
+            "content_correct_rate_lower_bound": 0.6666666666666666,
+            "content_correct_rate_upper_bound": 0.6666666666666666,
+            "supported_correct_rate": 0.5333333333333333,
+            "supported_correct_rate_lower_bound": 0.5333333333333333,
+            "supported_correct_rate_upper_bound": 0.5333333333333333
+          }
+        },
+        "demo_compatible": true,
+        "token_savings": 41084,
+        "token_savings_percent": 26.31616031566069,
+        "paired": {
+          "content_correct": {
+            "improved": [],
+            "regressed": [
+              9,
+              14
+            ]
+          },
+          "supported_correct": {
+            "improved": [],
+            "regressed": [
+              1,
+              12,
+              14
+            ]
+          }
+        },
+        "quality_retained": false,
+        "token_reduced": true
+      },
+      {
+        "name": "top_k_3",
+        "eligible": false,
+        "rejection_reasons": [
+          "Эксперимент завершился ошибкой: failed"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 3,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "full",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/top_k_3_20261029T131013256218Z.json",
+          "sha256": "160753200dde07341278dd953f03f1bfa3988e227eca90d8f95ca5220f3b49df"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T131056919568Z.json",
+          "sha256": "a1450dc721608da166217e11ebbf63e2005ba750eca0fbe5f8fbdaa7a544e525"
+        },
+        "family": "tokens",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 31964,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3592,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 35556,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 19,
+          "total_tokens": 35556
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 119351,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2463,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 121814,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 30,
+          "total_tokens": 121814
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 119351,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 2463,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 121814,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 30,
+            "total_tokens": 121814,
+            "tokens_per_question": 8120.933333333333,
+            "tokens_per_correct_answer": null,
+            "tokens_per_supported_correct_answer": null
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 311,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 311,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 9,
+            "total_tokens": 311
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 10,
+            "supported_correct": 10,
+            "content_unknown": 1,
+            "supported_unknown": 1,
+            "pipeline_errors": 0,
+            "abstentions": 1,
+            "unjudged": 0,
+            "judge_errors": 1,
+            "content_correct_rate": null,
+            "content_correct_rate_lower_bound": 0.6666666666666666,
+            "content_correct_rate_upper_bound": 0.7333333333333333,
+            "supported_correct_rate": null,
+            "supported_correct_rate_lower_bound": 0.6666666666666666,
+            "supported_correct_rate_upper_bound": 0.7333333333333333
+          }
+        }
+      },
+      {
+        "name": "compact",
+        "eligible": false,
+        "rejection_reasons": [
+          "Снижение content_correct"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "compact",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/compact_20261029T131148825267Z.json",
+          "sha256": "07c66409af42764949143f740f13be99cb6c858f26de2e48bb0b283dd55b6c39"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T131230435203Z.json",
+          "sha256": "e2be83647606583dd9243ed3038a33c3673a53e37b951d3d3406e3e7909c9e46"
+        },
+        "family": "tokens",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 31770,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3700,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 35470,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 19,
+          "total_tokens": 35470
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 134225,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2489,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 136714,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 31,
+          "total_tokens": 136714
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 134225,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 2489,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 136714,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 31,
+            "total_tokens": 136714,
+            "tokens_per_question": 9114.266666666666,
+            "tokens_per_correct_answer": 12428.545454545454,
+            "tokens_per_supported_correct_answer": 12428.545454545454
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 248,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 248,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 7,
+            "total_tokens": 248
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 11,
+            "supported_correct": 11,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 1,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.7333333333333333,
+            "content_correct_rate_lower_bound": 0.7333333333333333,
+            "content_correct_rate_upper_bound": 0.7333333333333333,
+            "supported_correct_rate": 0.7333333333333333,
+            "supported_correct_rate_lower_bound": 0.7333333333333333,
+            "supported_correct_rate_upper_bound": 0.7333333333333333
+          }
+        },
+        "demo_compatible": true,
+        "token_savings": 19403,
+        "token_savings_percent": 12.428499138466663,
+        "paired": {
+          "content_correct": {
+            "improved": [],
+            "regressed": [
+              14
+            ]
+          },
+          "supported_correct": {
+            "improved": [
+              9
+            ],
+            "regressed": [
+              14
+            ]
+          }
+        },
+        "quality_retained": false,
+        "token_reduced": true
+      },
+      {
+        "name": "self_consistency",
+        "eligible": false,
+        "rejection_reasons": [
+          "Снижение content_correct",
+          "Нет снижения фактических токенов ассистента"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "full",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/self_consistency_20261029T131325912828Z.json",
+          "sha256": "e37fe8bda20c5a25d309d6013f697c6bc634972ea5510597c857777ddf61e7ac"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T131456204193Z.json",
+          "sha256": "9fd68364b5cc3c358e92aadb145153ce406ac0a5e3f31f2a9ef70378977d7341"
+        },
+        "family": "reasoning",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "self_consistency"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 28530,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3198,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 31728,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 18,
+          "total_tokens": 31728
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 547466,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 6847,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 554313,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 76,
+          "total_tokens": 554313
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 547466,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 6847,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 554313,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 76,
+            "total_tokens": 554313,
+            "tokens_per_question": 36954.2,
+            "tokens_per_correct_answer": 50392.09090909091,
+            "tokens_per_supported_correct_answer": 50392.09090909091
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 168,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 168,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 5,
+            "total_tokens": 168
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 11,
+            "supported_correct": 11,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 2,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.7333333333333333,
+            "content_correct_rate_lower_bound": 0.7333333333333333,
+            "content_correct_rate_upper_bound": 0.7333333333333333,
+            "supported_correct_rate": 0.7333333333333333,
+            "supported_correct_rate_lower_bound": 0.7333333333333333,
+            "supported_correct_rate_upper_bound": 0.7333333333333333
+          }
+        },
+        "demo_compatible": false,
+        "deployment_note": "Исследовательский исполнитель; исходный run_demo не изменён.",
+        "token_savings": -398196,
+        "token_savings_percent": -255.06254924191472,
+        "paired": {
+          "content_correct": {
+            "improved": [],
+            "regressed": [
+              14
+            ]
+          },
+          "supported_correct": {
+            "improved": [
+              9
+            ],
+            "regressed": [
+              14
+            ]
+          }
+        },
+        "quality_retained": false,
+        "token_reduced": false
+      },
+      {
+        "name": "tree_of_thought",
+        "eligible": false,
+        "rejection_reasons": [
+          "Нет снижения фактических токенов ассистента"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "full",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/tree_of_thought_20261029T131549521370Z.json",
+          "sha256": "7f5cd7b7ae432083d4589984db5d285a8ac74ac1c713daa746e947fb0b57b113"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T131844640683Z.json",
+          "sha256": "bb3618e715b45b7ea7d0fe623addab3da72cfc3f003500fb52cb5fa0b0bd9f60"
+        },
+        "family": "reasoning",
+        "execution": {
+          "agent_strategy": "function_calling",
+          "reasoning_strategy": "tree_of_thought"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 28067,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2987,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 31054,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 18,
+          "total_tokens": 31054
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 791067,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 10488,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 801555,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 106,
+          "total_tokens": 801555
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 791067,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 10488,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 801555,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 106,
+            "total_tokens": 801555,
+            "tokens_per_question": 53437.0,
+            "tokens_per_correct_answer": 66796.25,
+            "tokens_per_supported_correct_answer": 72868.63636363637
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 201,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 201,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 6,
+            "total_tokens": 201
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 12,
+            "supported_correct": 11,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 2,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.8,
+            "content_correct_rate_lower_bound": 0.8,
+            "content_correct_rate_upper_bound": 0.8,
+            "supported_correct_rate": 0.7333333333333333,
+            "supported_correct_rate_lower_bound": 0.7333333333333333,
+            "supported_correct_rate_upper_bound": 0.7333333333333333
+          }
+        },
+        "demo_compatible": false,
+        "deployment_note": "Исследовательский исполнитель; исходный run_demo не изменён.",
+        "token_savings": -645438,
+        "token_savings_percent": -413.43223351716983,
+        "paired": {
+          "content_correct": {
+            "improved": [],
+            "regressed": []
+          },
+          "supported_correct": {
+            "improved": [],
+            "regressed": []
+          }
+        },
+        "quality_retained": true,
+        "token_reduced": false
+      },
+      {
+        "name": "forced_retrieval",
+        "eligible": true,
+        "rejection_reasons": [],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "full",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/forced_retrieval_20261029T131937996838Z.json",
+          "sha256": "a2ff39479976154b72880678e4430d7a32d6bd7ca3d72de22ceeb4eb00e6d86e"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T132008642542Z.json",
+          "sha256": "a300cc0874e83a52abaa20f0d5ba974d5a5e6714466729907ff66dafe78ba76e"
+        },
+        "family": "agents",
+        "execution": {
+          "agent_strategy": "forced",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 30439,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3409,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 33848,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 20,
+          "total_tokens": 33848
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 134321,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 1262,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 135583,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 15,
+          "total_tokens": 135583
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 134321,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 1262,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 135583,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 15,
+            "total_tokens": 135583,
+            "tokens_per_question": 9038.866666666667,
+            "tokens_per_correct_answer": 9684.5,
+            "tokens_per_supported_correct_answer": 11298.583333333334
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 14,
+            "supported_correct": 12,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 0,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.9333333333333333,
+            "content_correct_rate_lower_bound": 0.9333333333333333,
+            "content_correct_rate_upper_bound": 0.9333333333333333,
+            "supported_correct_rate": 0.8,
+            "supported_correct_rate_lower_bound": 0.8,
+            "supported_correct_rate_upper_bound": 0.8
+          }
+        },
+        "demo_compatible": false,
+        "deployment_note": "Исследовательский исполнитель; исходный run_demo не изменён.",
+        "token_savings": 20534,
+        "token_savings_percent": 13.152955795973533,
+        "paired": {
+          "content_correct": {
+            "improved": [
+              4,
+              11
+            ],
+            "regressed": []
+          },
+          "supported_correct": {
+            "improved": [
+              4,
+              9,
+              11
+            ],
+            "regressed": [
+              6,
+              13
+            ]
+          }
+        },
+        "quality_retained": true,
+        "token_reduced": true
+      },
+      {
+        "name": "plan_execute",
+        "eligible": false,
+        "rejection_reasons": [
+          "Снижение content_correct"
+        ],
+        "config": {
+          "model": "GigaChat/GigaChat-3-Pro",
+          "top_k": 5,
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "context_mode": "full",
+          "prompt_mode": "baseline"
+        },
+        "generation": {
+          "path": "results/plan_execute_20261029T132100963049Z.json",
+          "sha256": "3b931482a31dcf0e3dc58de79e6fb75fec91a1d13cd2f4ce2d35440ef485190a"
+        },
+        "quality_report": {
+          "path": "results/quality_20261029T132155995644Z.json",
+          "sha256": "4f31156c6f5147bf2c09f183cb8ec4314aceeac8debb7140aec231616aa889fb"
+        },
+        "family": "agents",
+        "execution": {
+          "agent_strategy": "plan_execute",
+          "reasoning_strategy": "direct"
+        },
+        "evaluation_tokens": {
+          "known_prompt_tokens": 29019,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 3310,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 32329,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 18,
+          "total_tokens": 32329
+        },
+        "assistant_tokens": {
+          "known_prompt_tokens": 140720,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 2340,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 143060,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 30,
+          "total_tokens": 143060
+        },
+        "efficiency": {
+          "questions": 15,
+          "assistant_chat": {
+            "known_prompt_tokens": 140720,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 2340,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 143060,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 30,
+            "total_tokens": 143060,
+            "tokens_per_question": 9537.333333333334,
+            "tokens_per_correct_answer": 13005.454545454546,
+            "tokens_per_supported_correct_answer": 13005.454545454546
+          },
+          "query_embeddings": {
+            "known_prompt_tokens": 659,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 659,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 15,
+            "total_tokens": 659
+          },
+          "index_embeddings": {
+            "known_prompt_tokens": 0,
+            "unknown_prompt_tokens_calls": 0,
+            "known_completion_tokens": 0,
+            "unknown_completion_tokens_calls": 0,
+            "known_total_tokens": 0,
+            "unknown_total_tokens_calls": 0,
+            "api_attempts": 0,
+            "total_tokens": 0
+          },
+          "quality": {
+            "content_correct": 11,
+            "supported_correct": 11,
+            "content_unknown": 0,
+            "supported_unknown": 0,
+            "pipeline_errors": 0,
+            "abstentions": 2,
+            "unjudged": 0,
+            "judge_errors": 0,
+            "content_correct_rate": 0.7333333333333333,
+            "content_correct_rate_lower_bound": 0.7333333333333333,
+            "content_correct_rate_upper_bound": 0.7333333333333333,
+            "supported_correct_rate": 0.7333333333333333,
+            "supported_correct_rate_lower_bound": 0.7333333333333333,
+            "supported_correct_rate_upper_bound": 0.7333333333333333
+          }
+        },
+        "demo_compatible": false,
+        "deployment_note": "Исследовательский исполнитель; исходный run_demo не изменён.",
+        "token_savings": 13057,
+        "token_savings_percent": 8.363599095550132,
+        "paired": {
+          "content_correct": {
+            "improved": [],
+            "regressed": [
+              6
+            ]
+          },
+          "supported_correct": {
+            "improved": [
+              9
+            ],
+            "regressed": [
+              6
+            ]
+          }
+        },
+        "quality_retained": false,
+        "token_reduced": true
+      }
+    ],
+    "selected": null,
+    "best_measured": {
+      "name": "forced_retrieval",
+      "eligible": true,
+      "rejection_reasons": [],
+      "config": {
+        "model": "GigaChat/GigaChat-3-Pro",
+        "top_k": 5,
+        "max_tokens": 2048,
+        "temperature": 0.0,
+        "context_mode": "full",
+        "prompt_mode": "baseline"
+      },
+      "generation": {
+        "path": "results/forced_retrieval_20261029T131937996838Z.json",
+        "sha256": "a2ff39479976154b72880678e4430d7a32d6bd7ca3d72de22ceeb4eb00e6d86e"
+      },
+      "quality_report": {
+        "path": "results/quality_20261029T132008642542Z.json",
+        "sha256": "a300cc0874e83a52abaa20f0d5ba974d5a5e6714466729907ff66dafe78ba76e"
+      },
+      "family": "agents",
+      "execution": {
+        "agent_strategy": "forced",
+        "reasoning_strategy": "direct"
+      },
+      "evaluation_tokens": {
+        "known_prompt_tokens": 30439,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 3409,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 33848,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 20,
+        "total_tokens": 33848
+      },
+      "assistant_tokens": {
+        "known_prompt_tokens": 134321,
+        "unknown_prompt_tokens_calls": 0,
+        "known_completion_tokens": 1262,
+        "unknown_completion_tokens_calls": 0,
+        "known_total_tokens": 135583,
+        "unknown_total_tokens_calls": 0,
+        "api_attempts": 15,
+        "total_tokens": 135583
+      },
+      "efficiency": {
+        "questions": 15,
+        "assistant_chat": {
+          "known_prompt_tokens": 134321,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 1262,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 135583,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 15,
+          "total_tokens": 135583,
+          "tokens_per_question": 9038.866666666667,
+          "tokens_per_correct_answer": 9684.5,
+          "tokens_per_supported_correct_answer": 11298.583333333334
+        },
+        "query_embeddings": {
+          "known_prompt_tokens": 0,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 0,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 0,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 0,
+          "total_tokens": 0
+        },
+        "index_embeddings": {
+          "known_prompt_tokens": 0,
+          "unknown_prompt_tokens_calls": 0,
+          "known_completion_tokens": 0,
+          "unknown_completion_tokens_calls": 0,
+          "known_total_tokens": 0,
+          "unknown_total_tokens_calls": 0,
+          "api_attempts": 0,
+          "total_tokens": 0
+        },
+        "quality": {
+          "content_correct": 14,
+          "supported_correct": 12,
+          "content_unknown": 0,
+          "supported_unknown": 0,
+          "pipeline_errors": 0,
+          "abstentions": 0,
+          "unjudged": 0,
+          "judge_errors": 0,
+          "content_correct_rate": 0.9333333333333333,
+          "content_correct_rate_lower_bound": 0.9333333333333333,
+          "content_correct_rate_upper_bound": 0.9333333333333333,
+          "supported_correct_rate": 0.8,
+          "supported_correct_rate_lower_bound": 0.8,
+          "supported_correct_rate_upper_bound": 0.8
+        }
+      },
+      "demo_compatible": false,
+      "deployment_note": "Исследовательский исполнитель; исходный run_demo не изменён.",
+      "token_savings": 20534,
+      "token_savings_percent": 13.152955795973533,
+      "paired": {
+        "content_correct": {
+          "improved": [
+            4,
+            11
+          ],
+          "regressed": []
+        },
+        "supported_correct": {
+          "improved": [
+            4,
+            9,
+            11
+          ],
+          "regressed": [
+            6,
+            13
+          ]
+        }
+      },
+      "quality_retained": true,
+      "token_reduced": true
+    },
+    "selection_scope": "selected исполняется исходным run_demo; best_measured учитывает все стратегии."
+  }
+}

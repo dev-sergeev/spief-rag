@@ -1,0 +1,11 @@
+# Python 3.13.5; из корня проекта: .venv/bin/python -m pip install -r requirements.txt
+# Гигачат вызывается по совместимому HTTP API Cloud.ru, отдельный SDK не нужен.
+numpy>=1.26,<3
+pandas>=2.2,<3
+pydantic>=2.7,<3
+python-dotenv>=1,<2
+httpx>=0.27,<1
+tokenizers>=0.21,<1
+jupyterlab>=4,<5
+ipykernel>=6,<8
+nbconvert>=7,<8

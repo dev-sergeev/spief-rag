@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "rubric_sha256": "e7f7bb99ac48b7703d0bfa2629b262cc3553e4b95fa2ab38296f065782a080f1",
+  "cases": [
+    {
+      "control_id": "correct_numeric_answer",
+      "case_id": 6,
+      "candidate": {
+        "answer": "По словам модератора, в Европе совместно производится до 70% кино.",
+        "insufficient_data": false,
+        "citations": [{"chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001", "quote": "В Европе до 70% кинопроизводства осуществляется совместно."}]
+      },
+      "expected": {"covered_fact_ids": ["up_to_70_percent"], "has_contradictions": false, "grounded": true}
+    },
+    {
+      "control_id": "wrong_percentage",
+      "case_id": 6,
+      "candidate": {
+        "answer": "По словам модератора, в Европе совместно производится до 80% кино.",
+        "insufficient_data": false,
+        "citations": [{"chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001", "quote": "В Европе до 70% кинопроизводства осуществляется совместно."}]
+      },
+      "expected": {"covered_fact_ids": [], "has_contradictions": true, "grounded": false}
+    },
+    {
+      "control_id": "incomplete_answer",
+      "case_id": 7,
+      "candidate": {
+        "answer": "В резерве в Ангарске содержится 120 тонн низкообогащённого урана.",
+        "insufficient_data": false,
+        "citations": [{"chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001", "quote": "It is just over five years since you and I signed another instrument, an important agreement, establishing the world’s first LEU reserve at the international uranium enrichment centre in the Russian city of Angarsk. That reserve, which contains 120 tonnes of LEU, is fully funded by the Russian Federation."}]
+      },
+      "expected": {"covered_fact_ids": ["leu_120_tonnes"], "has_contradictions": false, "grounded": true}
+    },
+    {
+      "control_id": "reference_extra_is_not_required",
+      "case_id": 9,
+      "candidate": {
+        "answer": "По данным Юкии Амано на ПМЭФ-2015, работало 438 ядерных реакторов, ещё 67 строилось.",
+        "insufficient_data": false,
+        "citations": [{"chunk_id": "TRANSFER_2015_06_18_STRATSESSION_nuclear.txt#0001", "quote": "There are now 438 nuclear power reactors in operation in 30 countries. Another 67 plants are under construction."}]
+      },
+      "expected": {"covered_fact_ids": ["operating_438", "building_67"], "has_contradictions": false, "grounded": true}
+    },
+    {
+      "control_id": "correct_fact_but_unrelated_citation",
+      "case_id": 8,
+      "candidate": {
+        "answer": "Исполнительным директором МЭА на брифинге ПМЭФ-2011 был Нобуо Танака.",
+        "insufficient_data": false,
+        "citations": [{"chunk_id": "TRANSFER_2011_06_17_PRAVLENIE_film.txt#0001", "quote": "В Европе до 70% кинопроизводства осуществляется совместно."}]
+      },
+      "expected": {"covered_fact_ids": ["nobuo_tanaka"], "has_contradictions": false, "grounded": false}
+    }
+  ]
+}
